@@ -21,7 +21,7 @@ export default function App() {
 
     const loadFile = async (file) => {
         setCurrentFile(file);
-        const res = await fetch(`/docs/${file}`);
+        const res = await fetch(`${import.meta.env.BASE_URL}docs/${file}`);
         const text = await res.text();
         setContent(text);
     };
