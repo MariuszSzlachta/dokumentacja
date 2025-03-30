@@ -27,7 +27,7 @@ export default function App() {
     };
 
     return (
-        <div className="flex flex-col md:flex-row h-screen">
+        <div className="flex flex-col md:flex-row h-screen padding-md">
             <aside className="w-full md:w-64 bg-gray-100 p-4 border-r overflow-y-auto">
                 <h2 className="text-xl font-bold mb-4">📚 Menu</h2>
                 <ul className="space-y-2">
@@ -46,10 +46,10 @@ export default function App() {
                 </ul>
             </aside>
 
-            <main className="flex-1 p-4 overflow-y-auto">
+            <main className="flex-1 px-4 py-4 md:px-12 md:py-8 overflow-y-auto bg-white">
                 {currentFile ? (
-                    <div
-                        className="prose max-w-none"
+                  <div
+                    className="prose prose-sm md:prose-base max-w-full text-left bg-white dark:bg-zinc-900"
                         dangerouslySetInnerHTML={{
                             __html: DOMPurify.sanitize(marked.parse(content)),
                         }}
