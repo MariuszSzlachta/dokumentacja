@@ -77,10 +77,3 @@
 
 ---
 
-## 🔄 Co dalej?
-
-- Chcesz dodać pogłos tylko do transmisji? Mogę pokazać.
-- Chcesz więcej kanałów (np. cajon, gitara)? Rozszerzamy miks.
-- Chcesz zrozumieć pre/post fader? Już czeka w głowie. 😎
-
-Chcesz teraz dodać **efekt tylko na transmisję**?
