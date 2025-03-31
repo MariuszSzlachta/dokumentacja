@@ -15,7 +15,9 @@ const files = [
     "post-pre-fader.md",
     "sceny.md",
     "miks-sala.md",
-    "kompresor.md"
+    "kompresor.md",
+    "reverb.md",
+    "petla-efektow.md"
 ];
 
 
