@@ -14,7 +14,13 @@ const files = [
     "fader.md",
     "post-pre-fader.md",
     "sceny.md",
+    "miks-sala.md",
+    "kompresor.md"
 ];
+
+
+
+
 
 export default function App() {
     const [currentFile, setCurrentFile] = useState(null);

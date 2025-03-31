@@ -10,4 +10,5 @@ export default defineConfig({
   },
   base: '/dokumentacja/', // 👈 bardzo ważne!
   plugins: [react()],
+
 });
