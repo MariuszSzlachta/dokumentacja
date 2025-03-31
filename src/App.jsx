@@ -11,7 +11,8 @@ const files = [
     "routing.md",
     "kazalnica.md",
     "fader.md",
-    "post-pre-fader.md"
+    "post-pre-fader.md",
+    "sceny.md"
     // dodaj tu kolejne pliki według potrzeb
 ];
 
