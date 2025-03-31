@@ -1,8 +1,9 @@
-// Templatka aplikacji w Vite + React do przeglądania plików Markdown jako dokumentacji
+// Aplikacja React do przeglądania plików Markdown z użyciem Bootstrap
 
 import { useState } from "react";
 import { marked } from "marked";
 import DOMPurify from "dompurify";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const files = [
     "wokal.md",
@@ -12,53 +13,84 @@ const files = [
     "kazalnica.md",
     "fader.md",
     "post-pre-fader.md",
-    "sceny.md"
-    // dodaj tu kolejne pliki według potrzeb
+    "sceny.md",
 ];
 
 export default function App() {
     const [currentFile, setCurrentFile] = useState(null);
     const [content, setContent] = useState("");
+    const [menuOpen, setMenuOpen] = useState(false);
 
     const loadFile = async (file) => {
         setCurrentFile(file);
         const res = await fetch(`${import.meta.env.BASE_URL}docs/${file}`);
         const text = await res.text();
         setContent(text);
+        setMenuOpen(false);
     };
 
     return (
-        <div className="flex flex-col md:flex-row h-screen padding-md">
-            <aside className="w-full md:w-64 bg-gray-100 p-4 border-r overflow-y-auto">
-                <h2 className="text-xl font-bold mb-4">📚 Menu</h2>
-                <ul className="space-y-2">
-                    {files.map((file) => (
-                        <li key={file}>
+      <div className="container-fluid h-100">
+          <div className="row h-100">
+              {/* Sidebar (collapsible on mobile) */}
+              <div className="col-md-3 bg-light border-end p-3 d-none d-md-block">
+                  <h4 className="mb-4">📚 Menu</h4>
+                  <ul className="list-group">
+                      {files.map((file) => (
+                        <li key={file} className="list-group-item p-1">
                             <button
-                                className={`w-full text-left p-2 rounded hover:bg-gray-200 ${
-                                    file === currentFile ? "bg-gray-300" : ""
-                                }`}
-                                onClick={() => loadFile(file)}
+                              className={`btn w-100 text-start btn-sm ${
+                                file === currentFile ? "btn-primary" : "btn-outline-secondary"
+                              }`}
+                              onClick={() => loadFile(file)}
                             >
                                 {file.replace(".md", "")}
                             </button>
                         </li>
-                    ))}
-                </ul>
-            </aside>
+                      ))}
+                  </ul>
+              </div>
 
-            <main className="flex-1 px-4 py-4 md:px-12 md:py-8 overflow-y-auto bg-white">
-                {currentFile ? (
-                  <div
-                    className="prose prose-sm md:prose-base max-w-full text-left bg-white dark:bg-zinc-900"
-                        dangerouslySetInnerHTML={{
-                            __html: DOMPurify.sanitize(marked.parse(content)),
-                        }}
+              {/* Mobile Menu Toggle */}
+              <div className="d-md-none p-2 bg-light border-bottom">
+                  <button className="btn btn-outline-primary" onClick={() => setMenuOpen(!menuOpen)}>
+                      ☰ Menu
+                  </button>
+              </div>
+
+              {menuOpen && (
+                <div className="p-3 bg-light border-bottom d-md-none">
+                    <ul className="list-group">
+                        {files.map((file) => (
+                          <li key={file} className="list-group-item p-1">
+                              <button
+                                className={`btn w-100 text-start btn-sm ${
+                                  file === currentFile ? "btn-primary" : "btn-outline-secondary"
+                                }`}
+                                onClick={() => loadFile(file)}
+                              >
+                                  {file.replace(".md", "")}
+                              </button>
+                          </li>
+                        ))}
+                    </ul>
+                </div>
+              )}
+
+              {/* Markdown Viewer */}
+              <div className="col-md-9 p-4 overflow-auto">
+                  {currentFile ? (
+                    <div
+                      className="markdown-body"
+                      dangerouslySetInnerHTML={{
+                          __html: DOMPurify.sanitize(marked.parse(content)),
+                      }}
                     />
-                ) : (
-                    <p className="text-gray-500">Wybierz plik z menu po lewej, aby go wyświetlić.</p>
-                )}
-            </main>
-        </div>
+                  ) : (
+                    <p className="text-muted">Wybierz plik z menu, aby go wyświetlić.</p>
+                  )}
+              </div>
+          </div>
+      </div>
     );
 }
