@@ -17,7 +17,9 @@ const files = [
     "miks-sala.md",
     "kompresor.md",
     "reverb.md",
-    "petla-efektow.md"
+    "petla-efektow.md",
+    "matrix.md",
+    "routing-transmisja.md"
 ];
 
 
