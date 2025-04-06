@@ -55,3 +55,50 @@ Equalizer w mikserze X32 pozwala kształtować brzmienie sygnału audio na róż
 - Dla początkujących – lepiej **wycinać niż podbijać** (usuwać brudy niż dodawać "piękno").
 - Słuchaj, nie patrz – oczy mogą mylić, ale uszy nie.
 
+
+## 🎧 Miksowanie kanałów – solo czy w miksie?
+
+Poniżej opisany jest standardowy workflow używany przez profesjonalnych realizatorów. Korekcję wykonujemy w **dwóch etapach** – najpierw w **solo**, a następnie **w miksie**, aby dopracować brzmienie w kontekście całego zespołu.
+
+---
+
+### 🛠 Etap 1: Solo — *chirurgiczne czyszczenie*
+✅ **Cel:** usunięcie niechcianych dźwięków, rezonansów i śmieci z kanału.
+
+**Co robimy w solo?**
+- 🔍 Lokalizujemy **brum**, **bzyczenie**, **szumy**, **rezonanse**.
+- 🔪 Włączamy **HPF** (Low Cut) – np. 80–120 Hz dla wokalu, żeby wyciąć „buczenie” z podłogi.
+- 🎯 Używamy wąskiego **peaking EQ**, aby przesuwać się po paśmie i znaleźć rezonujące lub nieprzyjemne tony – po czym delikatnie je wycinamy.
+
+🧠 **Uwaga:** Na tym etapie nie poprawiamy jeszcze charakteru brzmienia. Skupiamy się tylko na tym, co przeszkadza.
+
+---
+
+### 🎛 Etap 2: W miksie — *dopasowanie do całości*
+✅ **Cel:** ułożyć kanał w miksie, tak by nie przeszkadzał innym źródłom i był słyszalny.
+
+**Co robimy w miksie?**
+- 🪞 Sprawdzamy **czy nie koliduje z innymi kanałami** – np. wokal z gitarą lub cajon z basem.
+- ✂️ Odsuwamy instrumenty od siebie w pasmach – np. lekki *notch* 3 kHz na gitarze, żeby wokal był czytelniejszy.
+- 📣 Delikatnie **podbijamy** te częstotliwości, które budują charakter instrumentu (np. 2 kHz wokal, 120 Hz cajon).
+
+🧠 **Uwaga:** To nie chirurgia – to architektura brzmienia.
+
+---
+
+### 🔁 Podsumowanie workflow EQ:
+
+| Krok | Słuchanie | Cel | Typ korekcji |
+|------|-----------|-----|--------------|
+| 1. Solo | Tylko dany kanał | Czyszczenie | Usuwanie dudnienia, brumu, szumów |
+| 2. W miksie | Wszystkie kanały | Dopasowanie | Tworzenie przestrzeni, podbijanie charakteru |
+
+---
+
+### 💡 Tip pro tip:
+- **Solo to lupa 🔍.** Miks to krajobraz 🧱.
+- **Nigdy nie zostawiaj kanału po samym solo.** Zawsze sprawdź go ponownie w miksie.
+- **Niektóre instrumenty solo brzmią źle, ale w miksie doskonale.**
+
+
+
