@@ -19,7 +19,9 @@ const files = [
     "reverb.md",
     "petla-efektow.md",
     "matrix.md",
-    "routing-transmisja.md"
+    "routing-transmisja.md",
+    "slownik-hardware.md",
+    "equalizer.md"
 ];
 
 
