@@ -21,7 +21,8 @@ const files = [
     "matrix.md",
     "routing-transmisja.md",
     "slownik-hardware.md",
-    "equalizer.md"
+    "equalizer.md",
+    "propozycja-routingu.md"
 ];
 
 
@@ -74,6 +75,7 @@ export default function App() {
                 <div className="p-3 bg-light border-bottom d-md-none">
                     <ul className="list-group">
                         {files.map((file) => (
+
                           <li key={file} className="list-group-item p-1">
                               <button
                                 className={`btn w-100 text-start btn-sm ${
